@@ -1,0 +1,28 @@
+var group__bme690__example__driver =
+[
+    [ "BME690_BASIC_DEFAULT_FILTER", "group__bme690__example__driver.html#ga90d04ff86eb8015fabb203dcf9e11cb4", null ],
+    [ "BME690_BASIC_DEFAULT_HUMIDITY_OVERSAMPLING", "group__bme690__example__driver.html#ga5e04fc86ba8b7ed88337aadbab47b9e4", null ],
+    [ "BME690_BASIC_DEFAULT_PRESSURE_OVERSAMPLING", "group__bme690__example__driver.html#gad0fc2e14bd42f189fc9c893e88a97731", null ],
+    [ "BME690_BASIC_DEFAULT_SPI_WIRE", "group__bme690__example__driver.html#ga98a44679e8d3c25bfc3918fb55badc1c", null ],
+    [ "BME690_BASIC_DEFAULT_TEMPERATURE_OVERSAMPLING", "group__bme690__example__driver.html#ga256630de42bbc10e755c777e332d9fff", null ],
+    [ "BME690_GAS_DEFAULT_FILTER", "group__bme690__example__driver.html#ga3e8d6be9cebe71477be018743f9978fa", null ],
+    [ "BME690_GAS_DEFAULT_HUMIDITY_OVERSAMPLING", "group__bme690__example__driver.html#ga4a6afe66e57e48866b419d25d2d4f25c", null ],
+    [ "BME690_GAS_DEFAULT_PRESSURE_OVERSAMPLING", "group__bme690__example__driver.html#gac1e1cf821ba6b0181e2ff72ee47140aa", null ],
+    [ "BME690_GAS_DEFAULT_SPI_WIRE", "group__bme690__example__driver.html#ga5690a5a8922715734001c8d42a2c34b0", null ],
+    [ "BME690_GAS_DEFAULT_TEMPERATURE_OVERSAMPLING", "group__bme690__example__driver.html#ga51a3f26a95672ce089105816ce1f1c66", null ],
+    [ "BME690_PARALLEL_DEFAULT_FILTER", "group__bme690__example__driver.html#ga2756f749729199f28bb97415cba145fb", null ],
+    [ "BME690_PARALLEL_DEFAULT_HUMIDITY_OVERSAMPLING", "group__bme690__example__driver.html#ga457959bbda1a6d3be089b1fa9be4984e", null ],
+    [ "BME690_PARALLEL_DEFAULT_PRESSURE_OVERSAMPLING", "group__bme690__example__driver.html#ga0616c0a4102d8b5a98a5c73a109e6171", null ],
+    [ "BME690_PARALLEL_DEFAULT_SPI_WIRE", "group__bme690__example__driver.html#ga1358b1b6b4437faae0d3ddbfecb201a2", null ],
+    [ "BME690_PARALLEL_DEFAULT_TEMPERATURE_OVERSAMPLING", "group__bme690__example__driver.html#gac06651f616583cad764b67c125457562", null ],
+    [ "bme690_basic_deinit", "group__bme690__example__driver.html#ga98f1dd127118d7e99e127a255bb9e4ca", null ],
+    [ "bme690_basic_init", "group__bme690__example__driver.html#gafeb19469c367006693974728e400cdac", null ],
+    [ "bme690_basic_read", "group__bme690__example__driver.html#ga1c37d2a759a314de8bcaddad69b60ec0", null ],
+    [ "bme690_gas_deinit", "group__bme690__example__driver.html#ga07d91748f03096590b0188cf1179c717", null ],
+    [ "bme690_gas_init", "group__bme690__example__driver.html#ga912404a552c8035454c6bfd84b65977a", null ],
+    [ "bme690_gas_read", "group__bme690__example__driver.html#gaa4b7d3d8f2c7f10884970e5220026d0a", null ],
+    [ "bme690_parallel_deinit", "group__bme690__example__driver.html#gaffa6228256a263e87b277cb996d5f43c", null ],
+    [ "bme690_parallel_init", "group__bme690__example__driver.html#ga1903e5196d69b5ac9927fd3c86af2bb2", null ],
+    [ "bme690_parallel_server", "group__bme690__example__driver.html#ga2f43ee4bbc28ebcb64b3250472c62c80", null ],
+    [ "bme690_parallel_server_reset", "group__bme690__example__driver.html#ga151353bd8f8e6c1ade4844826ad4cbe3", null ]
+];
