@@ -441,6 +441,30 @@ uint8_t bme690_set_addr_pin(bme690_handle_t *handle, bme690_address_t addr_pin);
 uint8_t bme690_get_addr_pin(bme690_handle_t *handle, bme690_address_t *addr_pin);
 
 /**
+ * @brief     set ambient temperature
+ * @param[in] *handle pointer to a bme690 handle structure
+ * @param[in] amb_temp_c ambient temperature in C
+ * @return    status code
+ *            - 0 success
+ *            - 2 handle is NULL
+ *            - 3 handle is not initialized
+ * @note      none
+ */
+uint8_t bme690_set_ambient_temperature(bme690_handle_t *handle, int8_t amb_temp_c);
+
+/**
+ * @brief      get ambient temperature
+ * @param[in]  *handle pointer to a bme690 handle structure
+ * @param[out] *amb_temp_c pointer to an ambient temperature buffer
+ * @return     status code
+ *             - 0 success
+ *             - 2 handle is NULL
+ *             - 3 handle is not initialized
+ * @note       none
+ */
+uint8_t bme690_get_ambient_temperature(bme690_handle_t *handle, int8_t *amb_temp_c);
+
+/**
  * @brief     initialize the chip
  * @param[in] *handle pointer to a bme690 handle structure
  * @return    status code
