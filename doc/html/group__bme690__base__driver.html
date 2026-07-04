@@ -212,6 +212,10 @@ Functions</h2></td></tr>
 <tr class="memdesc:ga4a5f59b1731495c2c3ca51a9120cc3ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">set the iic address pin  <br /></td></tr>
 <tr class="memitem:ga01811159005231abc767e4f213c079f2" id="r_ga01811159005231abc767e4f213c079f2"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga01811159005231abc767e4f213c079f2">bme690_get_addr_pin</a> (<a class="el" href="#ga5707fe3111bc672c477c97cb8d14251a">bme690_handle_t</a> *handle, <a class="el" href="#ga726a9e0c90982f40cf029f5a55166a64">bme690_address_t</a> *addr_pin)</td></tr>
 <tr class="memdesc:ga01811159005231abc767e4f213c079f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">get the iic address pin  <br /></td></tr>
+<tr class="memitem:ga1d398fe4b6f8717e79497581dad923c2" id="r_ga1d398fe4b6f8717e79497581dad923c2"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga1d398fe4b6f8717e79497581dad923c2">bme690_set_ambient_temperature</a> (<a class="el" href="#ga5707fe3111bc672c477c97cb8d14251a">bme690_handle_t</a> *handle, int8_t amb_temp_c)</td></tr>
+<tr class="memdesc:ga1d398fe4b6f8717e79497581dad923c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">set ambient temperature  <br /></td></tr>
+<tr class="memitem:ga75c83eb2d0eda1fc13b5258946f8bae2" id="r_ga75c83eb2d0eda1fc13b5258946f8bae2"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga75c83eb2d0eda1fc13b5258946f8bae2">bme690_get_ambient_temperature</a> (<a class="el" href="#ga5707fe3111bc672c477c97cb8d14251a">bme690_handle_t</a> *handle, int8_t *amb_temp_c)</td></tr>
+<tr class="memdesc:ga75c83eb2d0eda1fc13b5258946f8bae2"><td class="mdescLeft">&#160;</td><td class="mdescRight">get ambient temperature  <br /></td></tr>
 <tr class="memitem:ga3418f83bca0852e29855512f143f15e7" id="r_ga3418f83bca0852e29855512f143f15e7"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga3418f83bca0852e29855512f143f15e7">bme690_init</a> (<a class="el" href="#ga5707fe3111bc672c477c97cb8d14251a">bme690_handle_t</a> *handle)</td></tr>
 <tr class="memdesc:ga3418f83bca0852e29855512f143f15e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">initialize the chip  <br /></td></tr>
 <tr class="memitem:gae8ab416a88a8f0cb21766adb086dd447" id="r_gae8ab416a88a8f0cb21766adb086dd447"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gae8ab416a88a8f0cb21766adb086dd447">bme690_deinit</a> (<a class="el" href="#ga5707fe3111bc672c477c97cb8d14251a">bme690_handle_t</a> *handle)</td></tr>
@@ -702,7 +706,7 @@ Functions</h2></td></tr>
 </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>none </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="driver__bme690_8c_source.html#l00973">973</a> of file <a class="el" href="driver__bme690_8c_source.html">driver_bme690.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="driver__bme690_8c_source.html#l01015">1015</a> of file <a class="el" href="driver__bme690_8c_source.html">driver_bme690.c</a>.</p>
 
 </div>
 </div>
@@ -748,7 +752,7 @@ Functions</h2></td></tr>
 </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>none </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="driver__bme690_8c_source.html#l02248">2248</a> of file <a class="el" href="driver__bme690_8c_source.html">driver_bme690.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="driver__bme690_8c_source.html#l02290">2290</a> of file <a class="el" href="driver__bme690_8c_source.html">driver_bme690.c</a>.</p>
 
 </div>
 </div>
@@ -794,7 +798,7 @@ Functions</h2></td></tr>
 </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>none </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="driver__bme690_8c_source.html#l02293">2293</a> of file <a class="el" href="driver__bme690_8c_source.html">driver_bme690.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="driver__bme690_8c_source.html#l02335">2335</a> of file <a class="el" href="driver__bme690_8c_source.html">driver_bme690.c</a>.</p>
 
 </div>
 </div>
@@ -836,6 +840,45 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="ga75c83eb2d0eda1fc13b5258946f8bae2" name="ga75c83eb2d0eda1fc13b5258946f8bae2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga75c83eb2d0eda1fc13b5258946f8bae2">&#9670;&#160;</a></span>bme690_get_ambient_temperature()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t bme690_get_ambient_temperature </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#ga5707fe3111bc672c477c97cb8d14251a">bme690_handle_t</a> *</td>          <td class="paramname"><span class="paramname"><em>handle</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int8_t *</td>          <td class="paramname"><span class="paramname"><em>amb_temp_c</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>get ambient temperature </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to a bme690 handle structure </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*amb_temp_c</td><td>pointer to an ambient temperature buffer </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>status code<ul>
+<li>0 success</li>
+<li>2 handle is NULL</li>
+<li>3 handle is not initialized </li>
+</ul>
+</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>none </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="driver__bme690_8c_source.html#l04546">4546</a> of file <a class="el" href="driver__bme690_8c_source.html">driver_bme690.c</a>.</p>
+
+</div>
+</div>
 <a id="ga0ee36d812eb21d9fc7fababe9b7f9abc" name="ga0ee36d812eb21d9fc7fababe9b7f9abc"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga0ee36d812eb21d9fc7fababe9b7f9abc">&#9670;&#160;</a></span>bme690_get_filter()</h2>
 
@@ -872,7 +915,7 @@ Functions</h2></td></tr>
 </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>none </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="driver__bme690_8c_source.html#l01815">1815</a> of file <a class="el" href="driver__bme690_8c_source.html">driver_bme690.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="driver__bme690_8c_source.html#l01857">1857</a> of file <a class="el" href="driver__bme690_8c_source.html">driver_bme690.c</a>.</p>
 
 </div>
 </div>
@@ -918,7 +961,7 @@ Functions</h2></td></tr>
 </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>none </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="driver__bme690_8c_source.html#l02491">2491</a> of file <a class="el" href="driver__bme690_8c_source.html">driver_bme690.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="driver__bme690_8c_source.html#l02533">2533</a> of file <a class="el" href="driver__bme690_8c_source.html">driver_bme690.c</a>.</p>
 
 </div>
 </div>
@@ -964,7 +1007,7 @@ Functions</h2></td></tr>
 </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>none </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="driver__bme690_8c_source.html#l02391">2391</a> of file <a class="el" href="driver__bme690_8c_source.html">driver_bme690.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="driver__bme690_8c_source.html#l02433">2433</a> of file <a class="el" href="driver__bme690_8c_source.html">driver_bme690.c</a>.</p>
 
 </div>
 </div>
@@ -1010,7 +1053,7 @@ Functions</h2></td></tr>
 </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>none </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="driver__bme690_8c_source.html#l02541">2541</a> of file <a class="el" href="driver__bme690_8c_source.html">driver_bme690.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="driver__bme690_8c_source.html#l02583">2583</a> of file <a class="el" href="driver__bme690_8c_source.html">driver_bme690.c</a>.</p>
 
 </div>
 </div>
@@ -1057,7 +1100,7 @@ Functions</h2></td></tr>
 </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>none </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="driver__bme690_8c_source.html#l01245">1245</a> of file <a class="el" href="driver__bme690_8c_source.html">driver_bme690.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="driver__bme690_8c_source.html#l01287">1287</a> of file <a class="el" href="driver__bme690_8c_source.html">driver_bme690.c</a>.</p>
 
 </div>
 </div>
@@ -1097,7 +1140,7 @@ Functions</h2></td></tr>
 </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>none </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="driver__bme690_8c_source.html#l01318">1318</a> of file <a class="el" href="driver__bme690_8c_source.html">driver_bme690.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="driver__bme690_8c_source.html#l01360">1360</a> of file <a class="el" href="driver__bme690_8c_source.html">driver_bme690.c</a>.</p>
 
 </div>
 </div>
@@ -1137,7 +1180,7 @@ Functions</h2></td></tr>
 </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>none </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="driver__bme690_8c_source.html#l01969">1969</a> of file <a class="el" href="driver__bme690_8c_source.html">driver_bme690.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="driver__bme690_8c_source.html#l02011">2011</a> of file <a class="el" href="driver__bme690_8c_source.html">driver_bme690.c</a>.</p>
 
 </div>
 </div>
@@ -1177,7 +1220,7 @@ Functions</h2></td></tr>
 </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>none </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="driver__bme690_8c_source.html#l02131">2131</a> of file <a class="el" href="driver__bme690_8c_source.html">driver_bme690.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="driver__bme690_8c_source.html#l02173">2173</a> of file <a class="el" href="driver__bme690_8c_source.html">driver_bme690.c</a>.</p>
 
 </div>
 </div>
@@ -1223,7 +1266,7 @@ Functions</h2></td></tr>
 </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>none </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="driver__bme690_8c_source.html#l02591">2591</a> of file <a class="el" href="driver__bme690_8c_source.html">driver_bme690.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="driver__bme690_8c_source.html#l02633">2633</a> of file <a class="el" href="driver__bme690_8c_source.html">driver_bme690.c</a>.</p>
 
 </div>
 </div>
@@ -1263,7 +1306,7 @@ Functions</h2></td></tr>
 </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>none </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="driver__bme690_8c_source.html#l01507">1507</a> of file <a class="el" href="driver__bme690_8c_source.html">driver_bme690.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="driver__bme690_8c_source.html#l01549">1549</a> of file <a class="el" href="driver__bme690_8c_source.html">driver_bme690.c</a>.</p>
 
 </div>
 </div>
@@ -1310,7 +1353,7 @@ Functions</h2></td></tr>
 </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>none </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="driver__bme690_8c_source.html#l01079">1079</a> of file <a class="el" href="driver__bme690_8c_source.html">driver_bme690.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="driver__bme690_8c_source.html#l01121">1121</a> of file <a class="el" href="driver__bme690_8c_source.html">driver_bme690.c</a>.</p>
 
 </div>
 </div>
@@ -1394,7 +1437,7 @@ Functions</h2></td></tr>
 </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>none </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="driver__bme690_8c_source.html#l02441">2441</a> of file <a class="el" href="driver__bme690_8c_source.html">driver_bme690.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="driver__bme690_8c_source.html#l02483">2483</a> of file <a class="el" href="driver__bme690_8c_source.html">driver_bme690.c</a>.</p>
 
 </div>
 </div>
@@ -1434,7 +1477,7 @@ Functions</h2></td></tr>
 </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>none </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="driver__bme690_8c_source.html#l01738">1738</a> of file <a class="el" href="driver__bme690_8c_source.html">driver_bme690.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="driver__bme690_8c_source.html#l01780">1780</a> of file <a class="el" href="driver__bme690_8c_source.html">driver_bme690.c</a>.</p>
 
 </div>
 </div>
@@ -1480,7 +1523,7 @@ Functions</h2></td></tr>
 </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>none </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="driver__bme690_8c_source.html#l02341">2341</a> of file <a class="el" href="driver__bme690_8c_source.html">driver_bme690.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="driver__bme690_8c_source.html#l02383">2383</a> of file <a class="el" href="driver__bme690_8c_source.html">driver_bme690.c</a>.</p>
 
 </div>
 </div>
@@ -1520,7 +1563,7 @@ Functions</h2></td></tr>
 </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>none </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="driver__bme690_8c_source.html#l01661">1661</a> of file <a class="el" href="driver__bme690_8c_source.html">driver_bme690.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="driver__bme690_8c_source.html#l01703">1703</a> of file <a class="el" href="driver__bme690_8c_source.html">driver_bme690.c</a>.</p>
 
 </div>
 </div>
@@ -1567,7 +1610,7 @@ Functions</h2></td></tr>
 </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>none </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="driver__bme690_8c_source.html#l01162">1162</a> of file <a class="el" href="driver__bme690_8c_source.html">driver_bme690.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="driver__bme690_8c_source.html#l01204">1204</a> of file <a class="el" href="driver__bme690_8c_source.html">driver_bme690.c</a>.</p>
 
 </div>
 </div>
@@ -1607,7 +1650,7 @@ Functions</h2></td></tr>
 </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>none </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="driver__bme690_8c_source.html#l02046">2046</a> of file <a class="el" href="driver__bme690_8c_source.html">driver_bme690.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="driver__bme690_8c_source.html#l02088">2088</a> of file <a class="el" href="driver__bme690_8c_source.html">driver_bme690.c</a>.</p>
 
 </div>
 </div>
@@ -1647,7 +1690,7 @@ Functions</h2></td></tr>
 </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>none </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="driver__bme690_8c_source.html#l01892">1892</a> of file <a class="el" href="driver__bme690_8c_source.html">driver_bme690.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="driver__bme690_8c_source.html#l01934">1934</a> of file <a class="el" href="driver__bme690_8c_source.html">driver_bme690.c</a>.</p>
 
 </div>
 </div>
@@ -1687,7 +1730,7 @@ Functions</h2></td></tr>
 </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>none </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="driver__bme690_8c_source.html#l01430">1430</a> of file <a class="el" href="driver__bme690_8c_source.html">driver_bme690.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="driver__bme690_8c_source.html#l01472">1472</a> of file <a class="el" href="driver__bme690_8c_source.html">driver_bme690.c</a>.</p>
 
 </div>
 </div>
@@ -1733,7 +1776,7 @@ Functions</h2></td></tr>
 </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>none </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="driver__bme690_8c_source.html#l02641">2641</a> of file <a class="el" href="driver__bme690_8c_source.html">driver_bme690.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="driver__bme690_8c_source.html#l02683">2683</a> of file <a class="el" href="driver__bme690_8c_source.html">driver_bme690.c</a>.</p>
 
 </div>
 </div>
@@ -1773,7 +1816,7 @@ Functions</h2></td></tr>
 </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>none </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="driver__bme690_8c_source.html#l01584">1584</a> of file <a class="el" href="driver__bme690_8c_source.html">driver_bme690.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="driver__bme690_8c_source.html#l01626">1626</a> of file <a class="el" href="driver__bme690_8c_source.html">driver_bme690.c</a>.</p>
 
 </div>
 </div>
@@ -1818,7 +1861,7 @@ Functions</h2></td></tr>
 </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>none </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="driver__bme690_8c_source.html#l02220">2220</a> of file <a class="el" href="driver__bme690_8c_source.html">driver_bme690.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="driver__bme690_8c_source.html#l02262">2262</a> of file <a class="el" href="driver__bme690_8c_source.html">driver_bme690.c</a>.</p>
 
 </div>
 </div>
@@ -1863,7 +1906,7 @@ Functions</h2></td></tr>
 </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>none </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="driver__bme690_8c_source.html#l02193">2193</a> of file <a class="el" href="driver__bme690_8c_source.html">driver_bme690.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="driver__bme690_8c_source.html#l02235">2235</a> of file <a class="el" href="driver__bme690_8c_source.html">driver_bme690.c</a>.</p>
 
 </div>
 </div>
@@ -1896,7 +1939,7 @@ Functions</h2></td></tr>
 </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>none </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="driver__bme690_8c_source.html#l04530">4530</a> of file <a class="el" href="driver__bme690_8c_source.html">driver_bme690.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="driver__bme690_8c_source.html#l04624">4624</a> of file <a class="el" href="driver__bme690_8c_source.html">driver_bme690.c</a>.</p>
 
 </div>
 </div>
@@ -1977,7 +2020,7 @@ Functions</h2></td></tr>
 </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>none </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="driver__bme690_8c_source.html#l04369">4369</a> of file <a class="el" href="driver__bme690_8c_source.html">driver_bme690.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="driver__bme690_8c_source.html#l04411">4411</a> of file <a class="el" href="driver__bme690_8c_source.html">driver_bme690.c</a>.</p>
 
 </div>
 </div>
@@ -2019,7 +2062,7 @@ Functions</h2></td></tr>
 </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>none </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="driver__bme690_8c_source.html#l03850">3850</a> of file <a class="el" href="driver__bme690_8c_source.html">driver_bme690.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="driver__bme690_8c_source.html#l03892">3892</a> of file <a class="el" href="driver__bme690_8c_source.html">driver_bme690.c</a>.</p>
 
 </div>
 </div>
@@ -2053,7 +2096,7 @@ Functions</h2></td></tr>
 </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>none </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="driver__bme690_8c_source.html#l04332">4332</a> of file <a class="el" href="driver__bme690_8c_source.html">driver_bme690.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="driver__bme690_8c_source.html#l04374">4374</a> of file <a class="el" href="driver__bme690_8c_source.html">driver_bme690.c</a>.</p>
 
 </div>
 </div>
@@ -2157,7 +2200,7 @@ Functions</h2></td></tr>
 </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>none </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="driver__bme690_8c_source.html#l03572">3572</a> of file <a class="el" href="driver__bme690_8c_source.html">driver_bme690.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="driver__bme690_8c_source.html#l03614">3614</a> of file <a class="el" href="driver__bme690_8c_source.html">driver_bme690.c</a>.</p>
 
 </div>
 </div>
@@ -2225,7 +2268,7 @@ Functions</h2></td></tr>
 </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>none </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="driver__bme690_8c_source.html#l02698">2698</a> of file <a class="el" href="driver__bme690_8c_source.html">driver_bme690.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="driver__bme690_8c_source.html#l02740">2740</a> of file <a class="el" href="driver__bme690_8c_source.html">driver_bme690.c</a>.</p>
 
 </div>
 </div>
@@ -2279,7 +2322,7 @@ Functions</h2></td></tr>
 </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>none </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="driver__bme690_8c_source.html#l03203">3203</a> of file <a class="el" href="driver__bme690_8c_source.html">driver_bme690.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="driver__bme690_8c_source.html#l03245">3245</a> of file <a class="el" href="driver__bme690_8c_source.html">driver_bme690.c</a>.</p>
 
 </div>
 </div>
@@ -2333,7 +2376,7 @@ Functions</h2></td></tr>
 </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>none </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="driver__bme690_8c_source.html#l02887">2887</a> of file <a class="el" href="driver__bme690_8c_source.html">driver_bme690.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="driver__bme690_8c_source.html#l02929">2929</a> of file <a class="el" href="driver__bme690_8c_source.html">driver_bme690.c</a>.</p>
 
 </div>
 </div>
@@ -2387,7 +2430,7 @@ Functions</h2></td></tr>
 </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>none </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="driver__bme690_8c_source.html#l03057">3057</a> of file <a class="el" href="driver__bme690_8c_source.html">driver_bme690.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="driver__bme690_8c_source.html#l03099">3099</a> of file <a class="el" href="driver__bme690_8c_source.html">driver_bme690.c</a>.</p>
 
 </div>
 </div>
@@ -2465,7 +2508,7 @@ Functions</h2></td></tr>
 </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>none </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="driver__bme690_8c_source.html#l03373">3373</a> of file <a class="el" href="driver__bme690_8c_source.html">driver_bme690.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="driver__bme690_8c_source.html#l03415">3415</a> of file <a class="el" href="driver__bme690_8c_source.html">driver_bme690.c</a>.</p>
 
 </div>
 </div>
@@ -2510,7 +2553,7 @@ Functions</h2></td></tr>
 </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>none </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="driver__bme690_8c_source.html#l02166">2166</a> of file <a class="el" href="driver__bme690_8c_source.html">driver_bme690.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="driver__bme690_8c_source.html#l02208">2208</a> of file <a class="el" href="driver__bme690_8c_source.html">driver_bme690.c</a>.</p>
 
 </div>
 </div>
@@ -2552,6 +2595,45 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="ga1d398fe4b6f8717e79497581dad923c2" name="ga1d398fe4b6f8717e79497581dad923c2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga1d398fe4b6f8717e79497581dad923c2">&#9670;&#160;</a></span>bme690_set_ambient_temperature()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t bme690_set_ambient_temperature </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#ga5707fe3111bc672c477c97cb8d14251a">bme690_handle_t</a> *</td>          <td class="paramname"><span class="paramname"><em>handle</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int8_t</td>          <td class="paramname"><span class="paramname"><em>amb_temp_c</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>set ambient temperature </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to a bme690 handle structure </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">amb_temp_c</td><td>ambient temperature in C </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>status code<ul>
+<li>0 success</li>
+<li>2 handle is NULL</li>
+<li>3 handle is not initialized </li>
+</ul>
+</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>none </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="driver__bme690_8c_source.html#l04520">4520</a> of file <a class="el" href="driver__bme690_8c_source.html">driver_bme690.c</a>.</p>
+
+</div>
+</div>
 <a id="gac8ad5311fc5500163042f24aeeb526c7" name="gac8ad5311fc5500163042f24aeeb526c7"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#gac8ad5311fc5500163042f24aeeb526c7">&#9670;&#160;</a></span>bme690_set_filter()</h2>
 
@@ -2588,7 +2670,7 @@ Functions</h2></td></tr>
 </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>none </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="driver__bme690_8c_source.html#l01773">1773</a> of file <a class="el" href="driver__bme690_8c_source.html">driver_bme690.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="driver__bme690_8c_source.html#l01815">1815</a> of file <a class="el" href="driver__bme690_8c_source.html">driver_bme690.c</a>.</p>
 
 </div>
 </div>
@@ -2635,7 +2717,7 @@ Functions</h2></td></tr>
 </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>none </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="driver__bme690_8c_source.html#l01202">1202</a> of file <a class="el" href="driver__bme690_8c_source.html">driver_bme690.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="driver__bme690_8c_source.html#l01244">1244</a> of file <a class="el" href="driver__bme690_8c_source.html">driver_bme690.c</a>.</p>
 
 </div>
 </div>
@@ -2675,7 +2757,7 @@ Functions</h2></td></tr>
 </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>none </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="driver__bme690_8c_source.html#l01283">1283</a> of file <a class="el" href="driver__bme690_8c_source.html">driver_bme690.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="driver__bme690_8c_source.html#l01325">1325</a> of file <a class="el" href="driver__bme690_8c_source.html">driver_bme690.c</a>.</p>
 
 </div>
 </div>
@@ -2715,7 +2797,7 @@ Functions</h2></td></tr>
 </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>none </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="driver__bme690_8c_source.html#l01927">1927</a> of file <a class="el" href="driver__bme690_8c_source.html">driver_bme690.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="driver__bme690_8c_source.html#l01969">1969</a> of file <a class="el" href="driver__bme690_8c_source.html">driver_bme690.c</a>.</p>
 
 </div>
 </div>
@@ -2755,7 +2837,7 @@ Functions</h2></td></tr>
 </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>none </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="driver__bme690_8c_source.html#l02081">2081</a> of file <a class="el" href="driver__bme690_8c_source.html">driver_bme690.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="driver__bme690_8c_source.html#l02123">2123</a> of file <a class="el" href="driver__bme690_8c_source.html">driver_bme690.c</a>.</p>
 
 </div>
 </div>
@@ -2795,7 +2877,7 @@ Functions</h2></td></tr>
 </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>none </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="driver__bme690_8c_source.html#l01465">1465</a> of file <a class="el" href="driver__bme690_8c_source.html">driver_bme690.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="driver__bme690_8c_source.html#l01507">1507</a> of file <a class="el" href="driver__bme690_8c_source.html">driver_bme690.c</a>.</p>
 
 </div>
 </div>
@@ -2842,7 +2924,7 @@ Functions</h2></td></tr>
 </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>none </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="driver__bme690_8c_source.html#l01036">1036</a> of file <a class="el" href="driver__bme690_8c_source.html">driver_bme690.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="driver__bme690_8c_source.html#l01078">1078</a> of file <a class="el" href="driver__bme690_8c_source.html">driver_bme690.c</a>.</p>
 
 </div>
 </div>
@@ -2920,7 +3002,7 @@ Functions</h2></td></tr>
 </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>none </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="driver__bme690_8c_source.html#l01696">1696</a> of file <a class="el" href="driver__bme690_8c_source.html">driver_bme690.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="driver__bme690_8c_source.html#l01738">1738</a> of file <a class="el" href="driver__bme690_8c_source.html">driver_bme690.c</a>.</p>
 
 </div>
 </div>
@@ -2960,7 +3042,7 @@ Functions</h2></td></tr>
 </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>none </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="driver__bme690_8c_source.html#l01619">1619</a> of file <a class="el" href="driver__bme690_8c_source.html">driver_bme690.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="driver__bme690_8c_source.html#l01661">1661</a> of file <a class="el" href="driver__bme690_8c_source.html">driver_bme690.c</a>.</p>
 
 </div>
 </div>
@@ -3007,7 +3089,7 @@ Functions</h2></td></tr>
 </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>none </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="driver__bme690_8c_source.html#l01119">1119</a> of file <a class="el" href="driver__bme690_8c_source.html">driver_bme690.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="driver__bme690_8c_source.html#l01161">1161</a> of file <a class="el" href="driver__bme690_8c_source.html">driver_bme690.c</a>.</p>
 
 </div>
 </div>
@@ -3047,7 +3129,7 @@ Functions</h2></td></tr>
 </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>none </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="driver__bme690_8c_source.html#l02004">2004</a> of file <a class="el" href="driver__bme690_8c_source.html">driver_bme690.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="driver__bme690_8c_source.html#l02046">2046</a> of file <a class="el" href="driver__bme690_8c_source.html">driver_bme690.c</a>.</p>
 
 </div>
 </div>
@@ -3087,7 +3169,7 @@ Functions</h2></td></tr>
 </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>none </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="driver__bme690_8c_source.html#l01850">1850</a> of file <a class="el" href="driver__bme690_8c_source.html">driver_bme690.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="driver__bme690_8c_source.html#l01892">1892</a> of file <a class="el" href="driver__bme690_8c_source.html">driver_bme690.c</a>.</p>
 
 </div>
 </div>
@@ -3127,7 +3209,7 @@ Functions</h2></td></tr>
 </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>none </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="driver__bme690_8c_source.html#l01388">1388</a> of file <a class="el" href="driver__bme690_8c_source.html">driver_bme690.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="driver__bme690_8c_source.html#l01430">1430</a> of file <a class="el" href="driver__bme690_8c_source.html">driver_bme690.c</a>.</p>
 
 </div>
 </div>
@@ -3167,7 +3249,7 @@ Functions</h2></td></tr>
 </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>none </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="driver__bme690_8c_source.html#l01542">1542</a> of file <a class="el" href="driver__bme690_8c_source.html">driver_bme690.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="driver__bme690_8c_source.html#l01584">1584</a> of file <a class="el" href="driver__bme690_8c_source.html">driver_bme690.c</a>.</p>
 
 </div>
 </div>
@@ -3202,7 +3284,7 @@ Functions</h2></td></tr>
 </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>none </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="driver__bme690_8c_source.html#l01352">1352</a> of file <a class="el" href="driver__bme690_8c_source.html">driver_bme690.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="driver__bme690_8c_source.html#l01394">1394</a> of file <a class="el" href="driver__bme690_8c_source.html">driver_bme690.c</a>.</p>
 
 </div>
 </div>
