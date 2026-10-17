@@ -363,7 +363,7 @@ static uint8_t a_bme690_get_nvm_calibration(bme690_handle_t *handle)
 
         return 1;                                                                              /* return error */
     }
-    handle->par_p5 = (int16_t)((uint16_t)buf[1] << 8 | buf[0]);                                /* set par p5 */
+    handle->par_p5 = (uint16_t)((uint16_t)buf[1] << 8 | buf[0]);                               /* set par p5 */
     if (a_bme690_iic_spi_read(handle, BME690_REG_NVM_PAR_P6_L, (uint8_t *)buf, 2) != 0)        /* read p6 */
     {
         handle->debug_print("bme690: get calibration data failed.\n");                         /* get calibration data failed */
@@ -412,8 +412,8 @@ static uint8_t a_bme690_get_nvm_calibration(bme690_handle_t *handle)
 
         return 1;                                                                              /* return error */
     }
-    handle->par_h1 = (int16_t)((uint16_t)buf[1] << 4 | buf[0] & 0xF);                          /* set h1 */
-    if (handle->par_h1 > 2047)                                                                 /* check h1 */
+    handle->par_h1 = (int16_t)((uint16_t)buf[1] << 4 | (buf[0] & 0x0F));                       /* set h1 */
+    if (handle->par_h1 > 2047)                                                                 /* check range */
     {
         handle->par_h1 = (int16_t)(handle->par_h1 - 4096);                                     /* set h1 */
     }
@@ -423,14 +423,14 @@ static uint8_t a_bme690_get_nvm_calibration(bme690_handle_t *handle)
 
         return 1;                                                                              /* return error */
     }
-    handle->par_h2 = (int8_t)reg;                                                              /* set h2 */
+    handle->par_h2 = (uint8_t)reg;                                                             /* set h2 */
     if (a_bme690_iic_spi_read(handle, BME690_REG_NVM_PAR_H3, (uint8_t *)&reg, 1) != 0)         /* read h3 */
     {
         handle->debug_print("bme690: get calibration data failed.\n");                         /* get calibration data failed */
 
         return 1;                                                                              /* return error */
     }
-    handle->par_h3 = (uint8_t)reg;                                                             /* set h3 */
+    handle->par_h3 = (int8_t)reg;                                                              /* set h3 */
     if (a_bme690_iic_spi_read(handle, BME690_REG_NVM_PAR_H4, (uint8_t *)&reg, 1) != 0)         /* read h4 */
     {
         handle->debug_print("bme690: get calibration data failed.\n");                         /* get calibration data failed */
@@ -438,13 +438,13 @@ static uint8_t a_bme690_get_nvm_calibration(bme690_handle_t *handle)
         return 1;                                                                              /* return error */
     }
     handle->par_h4 = (int8_t)reg;                                                              /* set h4 */
-    if (a_bme690_iic_spi_read(handle, BME690_REG_NVM_PAR_H5_L, (uint8_t *)buf, 2) != 0)        /* read h5 */
+    if (a_bme690_iic_spi_read(handle, BME690_REG_NVM_PAR_H5_H, (uint8_t *)buf, 2) != 0)        /* read h5 */
     {
         handle->debug_print("bme690: get calibration data failed.\n");                         /* get calibration data failed */
 
         return 1;                                                                              /* return error */
     }
-    handle->par_h5 = (int16_t)((uint16_t)buf[1] << 4 | buf[0] >> 4);                           /* set h5 */
+    handle->par_h5 = (int16_t)((uint16_t)buf[0] << 4 | buf[1] >> 4);                           /* set h5 */
     if (handle->par_h5 > 2047)                                                                 /* check h5 */
     {
         handle->par_h5 = (int16_t)(handle->par_h5 - 4096);                                     /* set h5 */
@@ -455,7 +455,7 @@ static uint8_t a_bme690_get_nvm_calibration(bme690_handle_t *handle)
 
         return 1;                                                                              /* return error */
     }
-    handle->par_h6 = (uint8_t)reg;                                                             /* set h6 */
+    handle->par_h6 = (int8_t)reg;                                                              /* set h6 */
     if (a_bme690_iic_spi_read(handle, BME690_REG_NVM_PAR_G1, (uint8_t *)&reg, 1) != 0)         /* read gh1 */
     {
         handle->debug_print("bme690: get calibration data failed.\n");                         /* get calibration data failed */
@@ -469,7 +469,7 @@ static uint8_t a_bme690_get_nvm_calibration(bme690_handle_t *handle)
 
         return 1;                                                                              /* return error */
     }
-    handle->par_g2 = (int16_t)((uint16_t)buf[1] << 8 | buf[0]);                                /* set par g2 */
+    handle->par_g2 = (uint16_t)((uint16_t)buf[1] << 8 | buf[0]);                               /* set par g2 */
     if (a_bme690_iic_spi_read(handle, BME690_REG_NVM_PAR_G3, (uint8_t *)&reg, 1) != 0)         /* read g3 */
     {
         handle->debug_print("bme690: get calibration data failed.\n");                         /* get calibration data failed */
@@ -497,7 +497,7 @@ static uint8_t a_bme690_get_nvm_calibration(bme690_handle_t *handle)
 
         return 1;                                                                              /* return error */
     }
-    handle->range_sw_err = (int8_t)((reg >> 4) & 0xF);                                         /* set range switch error */
+    handle->range_sw_err = (int8_t)(((int8_t)(reg & 0xF0)) / 16);                              /* set range switch error */
     handle->t_fine = 0.0f;                                                                     /* init 0 */
     handle->amb_temp = 25;                                                                     /* set 25c */
 
@@ -660,7 +660,6 @@ static uint8_t a_bme690_compensate_heat(bme690_handle_t *handle, float temp, uin
 
 /**
  * @brief      compensate gas resistance
- * @param[in]  *handle pointer to a bme690 handle structure
  * @param[in]  gas_res_adc gas resistance adc
  * @param[in]  gas_range gas range
  * @param[out] *ohms pointer to an ohms buffer
@@ -669,7 +668,7 @@ static uint8_t a_bme690_compensate_heat(bme690_handle_t *handle, float temp, uin
  *             - 1 compensate gas resistance failed
  * @note       none
  */
-static uint8_t a_bme690_compensate_gas_resistance(bme690_handle_t *handle, uint16_t gas_res_adc, uint8_t gas_range, float *ohms)
+static uint8_t a_bme690_compensate_gas_resistance(uint16_t gas_res_adc, uint8_t gas_range, float *ohms)
 {
     float calc_gas_res;
     
@@ -799,7 +798,7 @@ uint8_t bme690_get_interface(bme690_handle_t *handle, bme690_interface_t *interf
  *            - 2 handle is NULL
  *            - 3 linked functions is NULL
  *            - 4 id is error
- *            - 5 get nvm calibration failed
+ *            - 5 reset failed
  *            - 6 read calibration failed
  * @note      none
  */
@@ -2270,7 +2269,7 @@ uint8_t bme690_idac_heater_convert_to_data(bme690_handle_t *handle, uint8_t reg,
         return 3;                               /* return error */
     }
     
-    *ma = (float)(((reg >> 1) + 1) / 8);        /* convert raw data to real data */
+    *ma = (float)(((reg >> 1) + 1) / 8.0f);     /* convert raw data to real data */
     
     return 0;                                   /* success return 0 */
 }
@@ -2282,7 +2281,7 @@ uint8_t bme690_idac_heater_convert_to_data(bme690_handle_t *handle, uint8_t reg,
  * @param[out] *reg pointer to a register raw buffer
  * @return     status code
  *             - 0 success
- *             - 1 ms >= 0x0FC0
+ *             - 1 ms > 0x0FC0
  *             - 2 handle is NULL
  *             - 3 handle is not initialized
  * @note       none
@@ -2300,9 +2299,9 @@ uint8_t bme690_gas_wait_convert_to_register(bme690_handle_t *handle, uint16_t ms
         return 3;                                              /* return error */
     }
     
-    if (ms >= 0xFC0)                                           /* check ms */
+    if (ms > 0xFC0)                                            /* check ms */
     {
-        handle->debug_print("bme690: ms >= 0x0FC0.\n");        /* ms >= 0x0FC0 */
+        handle->debug_print("bme690: ms > 0x0FC0.\n");         /* ms > 0x0FC0 */
 
         return 1;                                              /* return error */
     }
@@ -2327,7 +2326,7 @@ uint8_t bme690_gas_wait_convert_to_register(bme690_handle_t *handle, uint16_t ms
  * @param[out] *reg pointer to a register raw buffer
  * @return     status code
  *             - 0 success
- *             - 1 ms >= 0x0783
+ *             - 1 ms > 0x0783
  *             - 2 handle is NULL
  *             - 3 handle is not initialized
  * @note       none
@@ -2347,9 +2346,9 @@ uint8_t bme690_gas_wait_shared_convert_to_register(bme690_handle_t *handle, floa
     }
     
     ms = (uint16_t)m;                                          /* set ms */
-    if (ms >= 0x0783U)                                         /* check ms */
+    if (ms > 0x0783U)                                          /* check ms */
     {
-        handle->debug_print("bme690: ms >= 0x0783.\n");        /* ms >= 0x0783 */
+        handle->debug_print("bme690: ms > 0x0783.\n");         /* ms > 0x0783 */
 
         return 1;                                              /* return error */
     }
@@ -2838,7 +2837,7 @@ uint8_t bme690_read_gas_resistance(bme690_handle_t *handle, bme690_section_t sec
         }
         *adc_raw = (((uint16_t)buf[0]) << 2) | ((buf[1] >> 6) & 0x03);                         /* set adc raw */
         *adc_range = buf[1] & 0x0F;                                                            /* set adc range */
-        res = a_bme690_compensate_gas_resistance(handle, *adc_raw , *adc_range, ohms);         /* compensate gas resistance */
+        res = a_bme690_compensate_gas_resistance(*adc_raw , *adc_range, ohms);                 /* compensate gas resistance */
         if (res != 0)                                                                          /* check result */
         {
             handle->debug_print("bme690: compensate gas resistance failed.\n");                /* compensate gas resistance failed */
@@ -2892,7 +2891,7 @@ uint8_t bme690_read_gas_resistance(bme690_handle_t *handle, bme690_section_t sec
         }
         *adc_raw = (((uint16_t)buf[0]) << 2) | ((buf[1] >> 6) & 0x03);                         /* set adc raw */
         *adc_range = buf[1] & 0x0F;                                                            /* set adc range */
-        res = a_bme690_compensate_gas_resistance(handle, *adc_raw , *adc_range, ohms);         /* compensate gas resistance */
+        res = a_bme690_compensate_gas_resistance(*adc_raw , *adc_range, ohms);                 /* compensate gas resistance */
         if (res != 0)                                                                          /* check result */
         {
             handle->debug_print("bme690: compensate gas resistance failed.\n");                /* compensate gas resistance failed */
@@ -3758,7 +3757,7 @@ uint8_t bme690_read(bme690_handle_t *handle, bme690_section_t section,
         }
         *adc_raw = (((uint16_t)buf[0]) << 2) | ((buf[1] >> 6) & 0x03);                         /* set adc raw */
         *adc_range = buf[1] & 0x0F;                                                            /* set adc range */
-        res = a_bme690_compensate_gas_resistance(handle, *adc_raw , *adc_range, ohms);         /* compensate gas resistance */
+        res = a_bme690_compensate_gas_resistance(*adc_raw , *adc_range, ohms);                 /* compensate gas resistance */
         if (res != 0)                                                                          /* check result */
         {
             handle->debug_print("bme690: compensate gas resistance failed.\n");                /* compensate gas resistance failed */
@@ -3853,7 +3852,7 @@ uint8_t bme690_read(bme690_handle_t *handle, bme690_section_t section,
         }
         *adc_raw = (((uint16_t)buf[0]) << 2) | ((buf[1] >> 6) & 0x03);                         /* set adc raw */
         *adc_range = buf[1] & 0x0F;                                                            /* set adc range */
-        res = a_bme690_compensate_gas_resistance(handle, *adc_raw , *adc_range, ohms);         /* compensate gas resistance */
+        res = a_bme690_compensate_gas_resistance(*adc_raw , *adc_range, ohms);                 /* compensate gas resistance */
         if (res != 0)                                                                          /* check result */
         {
             handle->debug_print("bme690: compensate gas resistance failed.\n");                /* compensate gas resistance failed */
@@ -3885,8 +3884,6 @@ uint8_t bme690_read(bme690_handle_t *handle, bme690_section_t section,
  *            - 6 index is invalid
  *            - 7 compensate failed
  *            - 8 gas is invalid
- *            - 9 heater is not stable
- *            - 10 sequence is lost
  * @note      none
  */
 uint8_t bme690_parallel_progress(bme690_handle_t *handle)
@@ -4018,7 +4015,7 @@ uint8_t bme690_parallel_progress(bme690_handle_t *handle)
             }
             adc_raw = (((uint16_t)buf[0]) << 2) | ((buf[1] >> 6) & 0x03);                              /* set adc raw */
             adc_range = buf[1] & 0x0F;                                                                 /* set adc range */
-            res = a_bme690_compensate_gas_resistance(handle, adc_raw , adc_range, &ohms);              /* compensate gas resistance */
+            res = a_bme690_compensate_gas_resistance(adc_raw , adc_range, &ohms);                      /* compensate gas resistance */
             if (res != 0)                                                                              /* check result */
             {
                 handle->debug_print("bme690: compensate gas resistance failed.\n");                    /* compensate gas resistance failed */
@@ -4146,7 +4143,7 @@ uint8_t bme690_parallel_progress(bme690_handle_t *handle)
             }
             adc_raw = (((uint16_t)buf[0]) << 2) | ((buf[1] >> 6) & 0x03);                              /* set adc raw */
             adc_range = buf[1] & 0x0F;                                                                 /* set adc range */
-            res = a_bme690_compensate_gas_resistance(handle, adc_raw , adc_range, &ohms);              /* compensate gas resistance */
+            res = a_bme690_compensate_gas_resistance(adc_raw , adc_range, &ohms);                      /* compensate gas resistance */
             if (res != 0)                                                                              /* check result */
             {
                 handle->debug_print("bme690: compensate gas resistance failed.\n");                    /* compensate gas resistance failed */
@@ -4274,7 +4271,7 @@ uint8_t bme690_parallel_progress(bme690_handle_t *handle)
             }
             adc_raw = (((uint16_t)buf[0]) << 2) | ((buf[1] >> 6) & 0x03);                              /* set adc raw */
             adc_range = buf[1] & 0x0F;                                                                 /* set adc range */
-            res = a_bme690_compensate_gas_resistance(handle, adc_raw , adc_range, &ohms);              /* compensate gas resistance */
+            res = a_bme690_compensate_gas_resistance(adc_raw , adc_range, &ohms);                      /* compensate gas resistance */
             if (res != 0)                                                                              /* check result */
             {
                 handle->debug_print("bme690: compensate gas resistance failed.\n");                    /* compensate gas resistance failed */
@@ -4314,11 +4311,11 @@ uint8_t bme690_parallel_progress(bme690_handle_t *handle)
             handle->parallel_sequence_number[2] = reg;                                                 /* set sequence number */
             if ((buf[1] & (1 << 5)) == 0)                                                              /* check gas valid */
             {
-                return 8;                                                                              /* return error */
+                goto step3;                                                                            /* dummy gas slot, skip it */
             }
             if ((buf[1] & (1 << 4)) == 0)                                                              /* check heat */
             {
-                return 9;                                                                              /* return error */
+                goto step3;                                                                            /* dummy gas slot, skip it */
             }
             handle->parallel_data[ind].channel = ind;                                                  /* set channel */
             handle->parallel_data[ind].temperature_raw = temperature_raw;                              /* set temperature raw */
@@ -4337,6 +4334,7 @@ uint8_t bme690_parallel_progress(bme690_handle_t *handle)
                                           &handle->parallel_data[ind], 1);                             /* run the callback */
             }
         }
+        step3:
         if (a_bme690_calculate_parallel_counter(handle) >= handle->parallel_data_len)                  /* check parallel counter */
         {
             if (handle->receive_callback != NULL)                                                      /* not null */
@@ -4405,7 +4403,7 @@ uint8_t bme690_parallel_reset(bme690_handle_t *handle)
  *            - 3 handle is not initialized
  *            - 4 config is invalid
  *            - 5 profile_len > 10
- *            - 6 ms >= 0x0783
+ *            - 6 ms > 0x0783
  * @note      none
  */
 uint8_t bme690_parallel_config(bme690_handle_t *handle, bme690_parallel_config_t *config)
@@ -4463,9 +4461,9 @@ uint8_t bme690_parallel_config(bme690_handle_t *handle, bme690_parallel_config_t
     
     factor = 0;                                                                           /* init 0 */
     ms = (uint16_t)config->shared_heater_dur;                                             /* set ms */
-    if (ms >= 0x0783U)                                                                    /* check ms */
+    if (ms > 0x0783U)                                                                     /* check ms */
     {
-        handle->debug_print("bme690: ms >= 0x0783.\n");                                   /* ms >= 0x0783 */
+        handle->debug_print("bme690: ms > 0x0783.\n");                                    /* ms > 0x0783 */
 
         return 6;                                                                         /* return error */
     }
