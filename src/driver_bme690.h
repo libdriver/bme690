@@ -88,7 +88,7 @@ typedef enum
  */
 typedef enum
 {
-    BME690_OVERSAMPLING_SKIP = 0x00,        /**< oversampling x1 */
+    BME690_OVERSAMPLING_SKIP = 0x00,        /**< skip */
     BME690_OVERSAMPLING_x1   = 0x01,        /**< oversampling x1 */
     BME690_OVERSAMPLING_x2   = 0x02,        /**< oversampling x2 */
     BME690_OVERSAMPLING_x4   = 0x03,        /**< oversampling x4 */
@@ -473,7 +473,7 @@ uint8_t bme690_get_ambient_temperature(bme690_handle_t *handle, int8_t *amb_temp
  *            - 2 handle is NULL
  *            - 3 linked functions is NULL
  *            - 4 id is error
- *            - 5 get nvm calibration failed
+ *            - 5 reset failed
  *            - 6 read calibration failed
  * @note      none
  */
@@ -632,8 +632,6 @@ uint8_t bme690_read_gas_resistance(bme690_handle_t *handle, bme690_section_t sec
  *            - 6 index is invalid
  *            - 7 compensate failed
  *            - 8 gas is invalid
- *            - 9 heater is not stable
- *            - 10 sequence is lost
  * @note      none
  */
 uint8_t bme690_parallel_progress(bme690_handle_t *handle);
@@ -660,7 +658,7 @@ uint8_t bme690_parallel_reset(bme690_handle_t *handle);
  *            - 3 handle is not initialized
  *            - 4 config is invalid
  *            - 5 profile_len > 10
- *            - 6 ms >= 0x0783
+ *            - 6 ms > 0x0783
  * @note      none
  */
 uint8_t bme690_parallel_config(bme690_handle_t *handle, bme690_parallel_config_t *config);
@@ -1197,7 +1195,7 @@ uint8_t bme690_idac_heater_convert_to_data(bme690_handle_t *handle, uint8_t reg,
  * @param[out] *reg pointer to a register raw buffer
  * @return     status code
  *             - 0 success
- *             - 1 ms >= 0x0FC0
+ *             - 1 ms > 0x0FC0
  *             - 2 handle is NULL
  *             - 3 handle is not initialized
  * @note       none
@@ -1211,7 +1209,7 @@ uint8_t bme690_gas_wait_convert_to_register(bme690_handle_t *handle, uint16_t ms
  * @param[out] *reg pointer to a register raw buffer
  * @return     status code
  *             - 0 success
- *             - 1 ms >= 0x0783
+ *             - 1 ms > 0x0783
  *             - 2 handle is NULL
  *             - 3 handle is not initialized
  * @note       none
